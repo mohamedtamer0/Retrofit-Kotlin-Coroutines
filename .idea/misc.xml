@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Alwqar/AndroidStudioProjects/RetrofitKotlinCoroutines/app/src/main/res/layout/activity_detail.xml" value="0.1953125" />
+        <entry key="..\:/Users/Alwqar/AndroidStudioProjects/RetrofitKotlinCoroutines/app/src/main/res/layout/activity_edit.xml" value="0.14074074074074075" />
         <entry key="..\:/Users/Alwqar/AndroidStudioProjects/RetrofitKotlinCoroutines/app/src/main/res/layout/activity_main.xml" value="0.11388888888888889" />
         <entry key="..\:/Users/Alwqar/AndroidStudioProjects/RetrofitKotlinCoroutines/app/src/main/res/layout/item_blog_post.xml" value="0.11388888888888889" />
+        <entry key="..\:/Users/Alwqar/AndroidStudioProjects/RetrofitKotlinCoroutines/app/src/main/res/menu/menu_detail.xml" value="0.20277777777777778" />
       </map>
     </option>
   </component>

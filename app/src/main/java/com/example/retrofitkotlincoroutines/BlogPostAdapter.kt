@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.retrofitkotlincoroutines.model.Post
 
 
+
 class BlogPostAdapter(
     private val context: Context,
     private val posts: List<Post>,
@@ -24,11 +25,11 @@ class BlogPostAdapter(
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-    }
-
     override fun getItemCount() = posts.size
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(posts[position])
+    }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvId = itemView.findViewById<TextView>(R.id.tvId)
@@ -44,5 +45,4 @@ class BlogPostAdapter(
             }
         }
     }
-
 }

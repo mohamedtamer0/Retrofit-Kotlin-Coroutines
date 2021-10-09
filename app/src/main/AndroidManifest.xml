@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RetrofitKotlinCoroutines">
         <activity
+            android:name=".edit.EditActivity"
+            android:exported="true" />
+        <activity
             android:name=".detail.DetailActivity"
             android:exported="true" />
         <activity

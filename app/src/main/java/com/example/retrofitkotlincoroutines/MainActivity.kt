@@ -14,12 +14,12 @@ import com.example.retrofitkotlincoroutines.detail.DetailActivity
 import com.example.retrofitkotlincoroutines.model.Post
 
 
+
 private const val TAG = "MainActivity"
 const val EXTRA_POST_ID = "EXTRA_POST_ID"
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainViewModel
+    private lateinit var binding: ActivityMainBinding
     private lateinit var blogPostAdapter: BlogPostAdapter
     private val blogPosts = mutableListOf<Post>()
 
@@ -37,13 +37,10 @@ class MainActivity : AppCompatActivity() {
             blogPostAdapter.notifyDataSetChanged()
             binding.rvPosts.smoothScrollToPosition(numElements)
         })
-
         viewModel.isLoading.observe(this, Observer { isLoading ->
             Log.i(TAG, "isLoading $isLoading")
             binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
         })
-
-
         viewModel.errorMessage.observe(this, Observer { errorMessage ->
             if (errorMessage == null) {
                 binding.tvError.visibility = View.GONE
@@ -67,6 +64,5 @@ class MainActivity : AppCompatActivity() {
         binding.button.setOnClickListener {
             viewModel.getPosts()
         }
-
     }
 }

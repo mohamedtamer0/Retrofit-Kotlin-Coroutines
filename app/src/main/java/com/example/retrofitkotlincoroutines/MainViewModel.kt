@@ -11,7 +11,6 @@ import kotlinx.coroutines.launch
 
 
 private const val TAG = "MainViewModel"
-
 class MainViewModel : ViewModel() {
     private val _posts: MutableLiveData<List<Post>> = MutableLiveData()
     val posts: LiveData<List<Post>>

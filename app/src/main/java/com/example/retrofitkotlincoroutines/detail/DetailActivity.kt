@@ -1,7 +1,9 @@
 package com.example.retrofitkotlincoroutines.detail
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -10,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.retrofitkotlincoroutines.EXTRA_POST_ID
 import com.example.retrofitkotlincoroutines.R
 import com.example.retrofitkotlincoroutines.databinding.ActivityDetailBinding
-
+import com.example.retrofitkotlincoroutines.edit.EditActivity
 
 const val EXTRA_POST = "EXTRA_POST"
 private const val TAG = "DetailActivity"
@@ -46,20 +48,20 @@ class DetailActivity : AppCompatActivity() {
         viewModel.getPostDetails(postId)
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.menu_detail, menu)
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        if (item.itemId == R.id.miEdit) {
-//            Log.i(TAG, "Navigate to edit screen")
-//            viewModel.post.observe(this, Observer { post ->
-//                val intent = Intent(this, EditActivity::class.java)
-//                intent.putExtra(EXTRA_POST, post)
-//                startActivity(intent)
-//            })
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_detail, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.miEdit) {
+            Log.i(TAG, "Navigate to edit screen")
+            viewModel.post.observe(this, Observer { post ->
+                val intent = Intent(this, EditActivity::class.java)
+                intent.putExtra(EXTRA_POST, post)
+                startActivity(intent)
+            })
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
